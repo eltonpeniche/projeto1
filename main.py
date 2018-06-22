@@ -4,8 +4,7 @@ import math
 
 #função que gera uma variável de Poisson
 def randpoi(media):
-    k = 0
-    p = 1
+    k, p = 0, 1
     elam = math.exp(-media)
     while (True):
         k += 1
