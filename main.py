@@ -1,4 +1,5 @@
 from random import random, gauss
+from reservatorio import Reservatorio
 import math
 
 #função que gera uma variável de Poisson
