@@ -24,7 +24,7 @@ desvioP = 100  # desvio padrão
 
 aguaPluvial = 0
 
-drenagem = 180  #drenagem em m³ diario
+dreno_diario = 180  #drenagem em m³ diario
 #drenagem = 160  #drenagem em³ diario
 NEXP = 10000
 
@@ -44,7 +44,7 @@ for i in range(NEXP):
             if dia < diasDeChuva:
                 aguaPluvial = gauss(media, desvioP)
                 reservatorio.encherResevatorio(aguaPluvial)
-            reservatorio.drenarReservatorio(drenagem)
+            reservatorio.drenarReservatorio(dreno_diario)
             if reservatorio.isEmpty():
                 tempoVazio += 1
     AguaCaptadaTotal += reservatorio.getAguaCaptadaTotal()
