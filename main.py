@@ -1,3 +1,5 @@
+from random import random, gauss
+import math
 
 #função que gera uma variável de Poisson
 def randpoi(media):
