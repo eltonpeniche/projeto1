@@ -1,10 +1,11 @@
-class Reservatorio:
+
+class Reservatorio: # classe que representa o reservatorio
     def __init__(self):
         self.capacidade = 10000 # capacidade maxima de agua do reservatorio
         self.volumeAtual = 5000 # volume atual de água do reservatorio
         self.transbordo = 0 # variavel que armazena o que não foi possivel captar
-        self.captada = 0
-        self.naoDrenada = 0
+        self.captada = 0 # variavel que armazena o total captado
+        self.naoDrenada = 0 # variavel que armazena o que não foi possivel drenar
 
     def getAguaCaptadaTotal(self):
         return self.captada
