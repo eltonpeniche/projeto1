@@ -27,12 +27,11 @@ dreno_diario = 180  #drenagem em m³ diario
 #dreno_diario = 160  #drenagem em³ diario
 NEXP = 10000
 
-
+#variaveis que vão receber o total
 AguaCaptadaTotal = 0
 AguaTotalPerdida = 0
 AguaTotalNaoDrenada = 0
 VolumeAtual = 0
-totalTempoVazio = 0
 tempoVazio = 0 # tempo que o reservatorio ficou vazio em semanas
 
 for i in range(NEXP):
