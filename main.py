@@ -8,8 +8,7 @@ def randpoi(media):
     elam = math.exp(-media)
     while (True):
         k += 1
-        r = random()
-        p = p * r
+        p = p * random()
         if (p < elam):
             return k - 1
 
@@ -45,14 +44,16 @@ for i in range(NEXP):
             reservatorio.drenarReservatorio(dreno_diario) # esvaziando o reservatorio
             if reservatorio.isEmpty(): # verificando se o reservatorio está vazio
                 tempoVazio += 1
+
+
     AguaCaptadaTotal += reservatorio.getAguaCaptadaTotal()
     AguaTotalPerdida += reservatorio.getAguaTotalPerdida()
     AguaTotalNaoDrenada += reservatorio.getAguaTotalNaoDrenada()
     VolumeAtual += reservatorio.getVolumeAtual()
     del reservatorio
 
-print("Media de água que foi captada em m³ = ", round(AguaCaptadaTotal/NEXP, 2))
-print("Media de água que não pode ser captada em m³ = ", round(AguaTotalPerdida/NEXP,2))
-print("Media de água que não pode ser drenada em m³ em m³ = ", round(AguaTotalNaoDrenada/NEXP,2))
-print("Media do tempo que o reservatório ficou Vazio em dias = ", round(tempoVazio/NEXP,2))
-print("Media volume atual do reservatório em m3 = ", round(VolumeAtual/NEXP,2))
+print(f"Media de água que foi captada = {round(AguaCaptadaTotal/NEXP, 2)} m³")
+print(f"Media de água que não pode ser captada = {round(AguaTotalPerdida/NEXP, 2)} m³")
+print(f"Media de água que não pode ser drenada = {round(AguaTotalNaoDrenada/NEXP,2)} m³")
+print(f"Media do tempo que o reservatório ficou Vazio = {round(tempoVazio/NEXP,2)} dias")
+print(f"Media volume atual do reservatório = {round(VolumeAtual/NEXP,2)} m3")
