@@ -31,7 +31,7 @@ AguaCaptadaTotal = 0
 AguaTotalPerdida = 0
 AguaTotalNaoDrenada = 0
 VolumeAtual = 0
-tempoVazio = 0 # tempo que o reservatorio ficou vazio em semanas
+tempoVazio = 0 # tempo que o reservatorio ficou vazio em dias
 
 for i in range(NEXP):
     reservatorio = Reservatorio()
