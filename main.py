@@ -12,10 +12,10 @@ def randpoi(media):
         if (p < elam):
             return k - 1
 
-
 periodo = 50  # em semanas
 diasDasemana = 7
-MediaChuvaSemana = 2 # media de chuva por semana seguindo uma distribuição de poisson
+MediaChuvaSemana = 2.0 # media de chuva por semana seguindo uma distribuição de poisson
+p =  MediaChuvaSemana / diasDasemana
 
 media = 600  # media
 desvioP = 100  # desvio padrão
@@ -33,12 +33,17 @@ AguaTotalNaoDrenada = 0
 VolumeAtual = 0
 tempoVazio = 0 # tempo que o reservatorio ficou vazio em dias
 
+def choveu():
+  global p 
+  r = random();
+  return p < r
+
 for i in range(NEXP):
     reservatorio = Reservatorio()
     for semana in range(periodo): # simulação do periodo
         diasDeChuva = randpoi(MediaChuvaSemana) # dias que choveu em um periodo
         for dia in range(diasDasemana): # simulação dos dias da semana
-            if dia < diasDeChuva: #verificando se nesse dia choveu
+            if choveu(): #verificando se nesse dia choveu
                 aguaPluvial = gauss(media, desvioP) # quantidade de agua que choveu
                 reservatorio.encherResevatorio(aguaPluvial) # enchendo o reservatorio
             reservatorio.drenarReservatorio(dreno_diario) # esvaziando o reservatorio
